@@ -1,8 +1,7 @@
-
-Body {
-  background-color: #61dafb;
+img {
+width: 50%;
+  height: 50%;
 }
-
 .App {
   text-align: center;
 }
@@ -19,7 +18,7 @@ Body {
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #1e3c72;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
