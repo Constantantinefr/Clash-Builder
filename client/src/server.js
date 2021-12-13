@@ -5,22 +5,22 @@ const db = require('better-sqlite3')('db.db')
 app.use(express.static('./client/build'))
 app.use(express.json())
 
-app.get('/books',(req,res) => {
-    const query = db.prepare("SELECT * FROM books")
+app.get('/cards',(req,res) => {
+    const query = db.prepare("SELECT * FROM cards")
     const books = query.all()
     res.json({
-        books
+        cards
     })
 })
 
 app.post("/checkout",(req,res) => {
-    const {bookId} = req.body
-    const query = db.prepare("UPDATE books SET available = 0 WHERE id = ?")
-    const result = query.run(bookId)
-    console.log(`checked out ${result.changes} book(s)`)
+    const {cardId} = req.body
+    const query = db.prepare("UPDATE cards SET available = 0 WHERE id = ?")
+    const result = query.run(cardId)
+    console.log(`checked out ${result.changes} card(s)`)
     res.json({
         didCheckOut: result.changes > 0 ? true : false,
-        bookId
+        cardId
     })
 })
 

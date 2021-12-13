@@ -1,5 +1,6 @@
 import Picture from './Clash-Royale-logo.png'
 import './App.css';
+import React from 'react'
 
 function App() {
   function handleCheckout_simple() {
@@ -25,7 +26,7 @@ function App() {
 }
   return (
     <div className="App">
-      <header className="App-header">
+      <body className="App-header">
       <img src={Picture} alt = "Topheader"/>
         <p>
         <form action="" method="post">
@@ -108,8 +109,8 @@ function App() {
         <button type="submit" value="Submit"
         onClick={() => handleCheckout_simple()}
         >Load all other decks</button>
-        <script src="Cards.js"></script>
-      </header>
+        <script src="deck.js"></script>
+      </body>
     </div>
   );
 }
